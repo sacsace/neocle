@@ -865,6 +865,14 @@ select {
 .site-footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 13.5px; line-height: 1.45; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { color: var(--forest); }
+.footer-grid > div:nth-child(2) { color: #3d4a43; }
+.footer-grid > div:nth-child(2) h3 { color: #5d6b63; }
+.footer-grid > div:nth-child(3) { color: #2c3832; }
+.footer-grid > div:nth-child(3) h3 { color: #546058; }
+.footer-grid > div:nth-child(4) { color: #4a433c; }
+.footer-grid > div:nth-child(4) h3 { color: #6b635a; }
+.family { color: #1c4632; }
+.family h3 { color: #3d6a52; }
 .family ul { grid-template-columns: 1fr; }
 .giant-lockup { overflow: hidden; padding-bottom: 8px; }
 .giant {
