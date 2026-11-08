@@ -110,6 +110,7 @@ document.querySelector("#copy-inquiry").addEventListener("click", async () => {
 });
 
 document.querySelector("#edit-inquiry").addEventListener("click", () => {
+  form.reset();
   success.classList.remove("show");
   form.classList.remove("hidden");
 });
