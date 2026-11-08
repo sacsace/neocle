@@ -1,0 +1,7 @@
+[build]
+builder = "RAILPACK"
+
+[deploy]
+startCommand = "npm --prefix web run start"
+restartPolicyType = "ON_FAILURE"
+overlapSeconds = 0
