@@ -91,6 +91,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
         <Script id="gtm" src="https://www.googletagmanager.com/gtm.js?id=GTM-TQQH6MMT" strategy="beforeInteractive" />
+        <Script id="gtm-2" src="https://www.googletagmanager.com/gtm.js?id=GTM-TV7W8DN2" strategy="beforeInteractive" />
         <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
