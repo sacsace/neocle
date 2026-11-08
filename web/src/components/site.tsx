@@ -57,15 +57,8 @@ export function Site() {
     const success = document.querySelector(".form-success");
     const preview = document.querySelector("#inquiry-preview");
     const note = document.querySelector(".form-note");
-    const email = (form?.dataset.email || "").trim();
     const year = document.querySelector("#year");
     if (year) year.textContent = String(new Date().getFullYear());
-
-    if (form && email && note) {
-      note.textContent = "작성 후 메일 앱에서 내용을 확인하고 보내 주세요.";
-      const submit = form.querySelector<HTMLButtonElement>("[type=submit]");
-      if (submit) submit.textContent = "메일로 보내기";
-    }
 
     const field = (name: string) => {
       const control = form?.elements.namedItem(name);
@@ -89,16 +82,44 @@ export function Site() {
 
     form?.addEventListener(
       "submit",
-      (event) => {
+      async (event) => {
         event.preventDefault();
-        if (!form.reportValidity() || !preview || !success) return;
-        const body = compose();
-        preview.textContent = body;
-        form.classList.add("hidden");
-        success.classList.add("show");
-        if (email) {
-          const subject = encodeURIComponent("수출입 대행 상담 요청");
-          window.location.href = `mailto:${email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+        if (!form.reportValidity() || !preview || !success || !note) return;
+        const submit = form.querySelector<HTMLButtonElement>("[type=submit]");
+        const previous = submit?.textContent || "문의 보내기";
+        if (submit) {
+          submit.disabled = true;
+          submit.textContent = "보내는 중...";
+        }
+        try {
+          const response = await fetch("/api/inquiry", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              company: field("company"),
+              name: field("name"),
+              email: field("email"),
+              phone: field("phone"),
+              kind: field("kind"),
+              goods: field("goods"),
+              incoterm: field("incoterm"),
+              origin: field("origin"),
+              destination: field("destination"),
+              message: field("message"),
+            }),
+          });
+          const result = (await response.json().catch(() => ({}))) as { error?: string };
+          if (!response.ok) throw new Error(result.error || "메일을 보내지 못했습니다.");
+          preview.textContent = compose();
+          form.classList.add("hidden");
+          success.classList.add("show");
+        } catch (error) {
+          note.textContent = error instanceof Error ? error.message : "메일을 보내지 못했습니다. 잠시 후 다시 시도해 주세요.";
+        } finally {
+          if (submit) {
+            submit.disabled = false;
+            submit.textContent = previous;
+          }
         }
       },
       { signal: stop },

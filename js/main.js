@@ -35,12 +35,6 @@ const form = document.querySelector("#inquiry");
 const success = document.querySelector(".form-success");
 const preview = document.querySelector("#inquiry-preview");
 const note = document.querySelector(".form-note");
-const email = (form.dataset.email || "").trim();
-
-if (email) {
-  note.textContent = "작성 후 메일 앱에서 내용을 확인하고 보내 주세요.";
-  form.querySelector("[type=submit]").textContent = "메일로 보내기";
-}
 
 const field = (name) => form.elements[name].value.trim();
 const compose = () =>
@@ -58,16 +52,40 @@ const compose = () =>
     `상세 문의 내용: ${field("message") || "-"}`,
   ].join("\n");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
-  const body = compose();
-  preview.textContent = body;
-  form.classList.add("hidden");
-  success.classList.add("show");
-  if (email) {
-    const subject = encodeURIComponent("수출입 대행 상담 요청");
-    window.location.href = `mailto:${email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+  const submit = form.querySelector("[type=submit]");
+  const previous = submit.textContent;
+  submit.disabled = true;
+  submit.textContent = "보내는 중...";
+  try {
+    const response = await fetch("/api/inquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        company: field("company"),
+        name: field("name"),
+        email: field("email"),
+        phone: field("phone"),
+        kind: field("kind"),
+        goods: field("goods"),
+        incoterm: field("incoterm"),
+        origin: field("origin"),
+        destination: field("destination"),
+        message: field("message"),
+      }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || "메일을 보내지 못했습니다.");
+    preview.textContent = compose();
+    form.classList.add("hidden");
+    success.classList.add("show");
+  } catch (error) {
+    note.textContent = error instanceof Error ? error.message : "메일을 보내지 못했습니다. 잠시 후 다시 시도해 주세요.";
+  } finally {
+    submit.disabled = false;
+    submit.textContent = previous;
   }
 });
 

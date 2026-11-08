@@ -118,7 +118,7 @@ export function SiteMarkup() {
         <div>
           <p className="kicker">Neocle International Private Limited</p>
           <h2>수출입의 시작부터,<br />지속적인 거래까지.</h2>
-          <p className="lead">네오클 인터내셔널은 인도 타밀나두주 파파람바캄에 사무실과 창고를 운영하는 원자재 공급 및 수출입 대행 전문기업입니다.</p>
+          <p className="lead">네오클 인터내셔널은 인도 타밀나두주 파파람바캄에 약 836㎡ 창고를, 카르나타카주 벵갈루루에 사무실을 운영하는 원자재 공급 및 수출입 대행 전문기업입니다.</p>
           <p className="lead">코팅·비코팅 PA66 에어백 원단을 선별·포장하여 태국과 한국으로 수출하고, 스크랩을 한국에 공급합니다. 석영과 자단은 구매를 희망하는 기업과 공급 조건을 협의합니다.</p>
           <p className="lead">인도로의 수입과 인도에서 해외로의 수출을 지원하며, 품목별 공급 가능 여부와 수출입 요건을 검토하여 거래 서류 준비부터 운송까지 필요한 업무를 지원합니다.</p>
         </div>
@@ -469,7 +469,7 @@ export function SiteMarkup() {
         <div>
           <p className="eyebrow light"><i></i> Coverage</p>
           <h2>인도에서,<br />태국과 한국으로.</h2>
-          <p className="lead">인도 타밀나두주의 사무실과 창고를 거점으로 PA66 에어백 원단을 태국과 한국에, 스크랩을 한국에 수출합니다.</p>
+          <p className="lead">인도 타밀나두주 파파람바캄 창고를 거점으로 PA66 에어백 원단을 태국과 한국에, 스크랩을 한국에 수출합니다.</p>
           <ul className="modes">
             <li>해상 FCL · LCL</li>
             <li>항공</li>
@@ -478,7 +478,7 @@ export function SiteMarkup() {
           </ul>
         </div>
         <div>
-          <svg className="route-map" viewBox="0 0 720 500" role="img" aria-label="인도에서 태국과 한국으로 이어지는 노선. 흰색 점은 인도의 창고·사무실 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.">
+          <svg className="route-map" viewBox="0 0 720 500" role="img" aria-label="인도에서 태국과 한국으로 이어지는 노선. 흰색 점은 인도 타밀나두의 창고 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.">
             <g fill="none" stroke="rgba(243,240,232,0.45)" strokeWidth="1.25" strokeLinecap="round">
               <path d="M210 292C290 210 350 188 430 206" />
               <path d="M210 292C340 180 470 110 590 132" />
@@ -489,27 +489,43 @@ export function SiteMarkup() {
               <g><circle cx="590" cy="132" r="10" fill="none" strokeOpacity="0.45" /><circle cx="590" cy="132" r="3.5" stroke="none" /><text x="590" y="114" textAnchor="middle" stroke="none">한국</text></g>
             </g>
           </svg>
-          <p className="map-note">흰색 점은 인도의 창고·사무실 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.</p>
+          <p className="map-note">흰색 점은 인도 타밀나두의 창고 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.</p>
         </div>
       </div>
     </section>
 
     <section className="location" id="location">
-      <div className="wrap location-grid">
-        <div>
-          <p className="eyebrow"><i></i> Warehouse · Office</p>
-          <h2 className="block-title">창고와 사무실을<br />한곳에서 운영합니다.</h2>
-          <p className="lead">인도 타밀나두주 첸나이 인근 파파람바캄에 사무실과 약 836㎡ 규모의 창고를 운영하고 있습니다. 방문하시면 현장에서 화물을 확인하고 거래 상담을 진행하실 수 있습니다.</p>
-          <address className="address">
-            <strong>Neocle International Private Limited</strong>
-            Papparambakkam, Thiruvallur<br />
-            Tamil Nadu 602123, India<br />
-            창고 면적: 약 836㎡
-          </address>
-          <a className="btn" href="https://maps.app.goo.gl/tjriYJEqkzERZ63j8" target="_blank" rel="noopener noreferrer">지도에서 위치 확인</a>
-        </div>
-        <div className="map-frame">
-          <iframe title="Neocle International 창고와 사무실 위치" src="https://maps.google.com/maps?q=13.0498988,79.9621672&z=15&hl=ko&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <div className="wrap">
+        <p className="eyebrow"><i></i> Warehouse · Office</p>
+        <h2 className="block-title">창고는 타밀나두에,<br />사무실은 벵갈루루에 있습니다.</h2>
+        <p className="lead">약 836㎡ 규모의 창고는 첸나이 인근 파파람바캄에서 화물을 보관합니다. 인도 사무실은 벵갈루루 도다네쿤디에 있습니다.</p>
+        <div className="place-grid">
+          <article className="place">
+            <h3>창고</h3>
+            <address className="address">
+              <strong>Neocle International Private Limited</strong>
+              Papparambakkam, Thiruvallur<br />
+              Tamil Nadu 602123, India<br />
+              창고 면적: 약 836㎡
+            </address>
+            <a className="btn" href="https://maps.app.goo.gl/tjriYJEqkzERZ63j8" target="_blank" rel="noopener noreferrer">창고 위치 확인</a>
+            <div className="map-frame">
+              <iframe title="Neocle International 창고" src="https://maps.google.com/maps?q=13.0498988,79.9621672&z=15&hl=ko&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </article>
+          <article className="place">
+            <h3>인도 사무실</h3>
+            <address className="address">
+              <strong>Neocle International Private Limited</strong>
+              24/1, Ferns City Road<br />
+              Doddanekundi, Bengaluru<br />
+              Karnataka 560037, India
+            </address>
+            <a className="btn" href="https://maps.app.goo.gl/4c8GXSTGkSCFAuq86" target="_blank" rel="noopener noreferrer">사무실 위치 확인</a>
+            <div className="map-frame">
+              <iframe title="Neocle International 인도 사무실" src="https://maps.google.com/maps?q=12.9786052,77.6973322&z=15&hl=ko&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -523,8 +539,7 @@ export function SiteMarkup() {
           <p className="lead">PA66 에어백 원단은 코팅 여부와 색상 구분(흰색·기타 색상)을 함께 기재해 주세요. 스크랩, 석영, 자단 및 기타 수출입 대행 문의도 아래 양식을 이용해 주시기 바랍니다.</p>
         </div>
         <div>
-          {/* data-email 에 수신 주소를 넣으면 제출 시 메일 앱이 열립니다. */}
-          <form id="inquiry" data-email="" noValidate>
+          <form id="inquiry" noValidate>
             <div className="fields">
               <label>회사명 <i>*</i>
                 <input name="company" required autoComplete="organization" />
@@ -569,13 +584,13 @@ export function SiteMarkup() {
               </label>
             </div>
             <div className="form-actions">
-              <button className="btn" type="submit">문의 내용 작성하기</button>
-              <p className="form-note">입력하신 내용으로 문의서가 작성됩니다. 작성된 문의서는 자동 전송되지 않으므로, 복사한 후 담당자에게 전달해 주세요.</p>
+              <button className="btn" type="submit">문의 보내기</button>
+              <p className="form-note">문의 내용은 담당자에게 메일로 전달됩니다. 회신은 입력하신 이메일 주소로 드립니다.</p>
             </div>
           </form>
           <div className="form-success" role="status">
-            <h3>문의서가 작성되었습니다.</h3>
-            <p>아래 내용을 복사하여 담당자 이메일 또는 WhatsApp으로 보내 주세요.</p>
+            <h3>문의가 전달되었습니다.</h3>
+            <p>담당자가 입력하신 이메일로 회신합니다.</p>
             <pre id="inquiry-preview"></pre>
             <div className="form-actions">
               <button className="btn" type="button" id="copy-inquiry">내용 복사</button>
@@ -620,11 +635,13 @@ export function SiteMarkup() {
         <div>
           <h3>창고 · 사무실</h3>
           <ul>
-            <li>Papparambakkam</li>
-            <li>Thiruvallur, Tamil Nadu</li>
-            <li>602123, India</li>
+            <li>창고 · Papparambakkam</li>
+            <li>Thiruvallur, Tamil Nadu 602123</li>
             <li>창고 면적: 약 836㎡</li>
-            <li><a href="https://maps.app.goo.gl/tjriYJEqkzERZ63j8" target="_blank" rel="noopener noreferrer">지도에서 위치 확인</a></li>
+            <li><a href="https://maps.app.goo.gl/tjriYJEqkzERZ63j8" target="_blank" rel="noopener noreferrer">창고 위치 확인</a></li>
+            <li>사무실 · Doddanekundi, Bengaluru</li>
+            <li>Karnataka 560037, India</li>
+            <li><a href="https://maps.app.goo.gl/4c8GXSTGkSCFAuq86" target="_blank" rel="noopener noreferrer">사무실 위치 확인</a></li>
           </ul>
         </div>
         <div className="family">
