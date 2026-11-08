@@ -138,6 +138,67 @@ export function Site() {
       { signal: stop },
     );
 
+    const dialog = document.querySelector<HTMLDialogElement>(".lightbox");
+    const view = dialog?.querySelector("img");
+    const caption = dialog?.querySelector("figcaption");
+    const photos = () =>
+      [...document.querySelectorAll<HTMLImageElement>("main img")].filter((img) => !img.closest(".slide, .mosaic"));
+    const showPhoto = (index: number) => {
+      const items = photos();
+      if (!dialog || !view || !caption || items.length === 0) return;
+      const next = (index + items.length) % items.length;
+      const img = items[next];
+      view.src = img.currentSrc || img.src;
+      view.alt = img.alt || "";
+      const text = img.closest("figure")?.querySelector("figcaption")?.textContent?.trim() || img.alt || "";
+      caption.textContent = text;
+      caption.hidden = !text;
+      dialog.dataset.index = String(next);
+      if (!dialog.open) dialog.showModal();
+      document.body.classList.add("locked");
+    };
+    document.querySelector("main")?.addEventListener(
+      "click",
+      (event) => {
+        const img = (event.target as Element).closest?.("img");
+        if (!(img instanceof HTMLImageElement) || !img.closest("main") || img.closest(".slide, .mosaic")) return;
+        showPhoto(photos().indexOf(img));
+      },
+      { signal: stop },
+    );
+    dialog?.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target as Element;
+        if (target.closest("[data-lightbox='prev']")) {
+          showPhoto(Number(dialog.dataset.index) - 1);
+          return;
+        }
+        if (target.closest("[data-lightbox='next']")) {
+          showPhoto(Number(dialog.dataset.index) + 1);
+          return;
+        }
+        if (event.target === dialog || target.closest("[data-lightbox='close']")) dialog.close();
+      },
+      { signal: stop },
+    );
+    dialog?.addEventListener(
+      "close",
+      () => {
+        document.body.classList.remove("locked");
+        view?.removeAttribute("src");
+      },
+      { signal: stop },
+    );
+    dialog?.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key === "ArrowRight") showPhoto(Number(dialog.dataset.index) + 1);
+        if (event.key === "ArrowLeft") showPhoto(Number(dialog.dataset.index) - 1);
+      },
+      { signal: stop },
+    );
+
     return () => controller.abort();
   }, []);
 

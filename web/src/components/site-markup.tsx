@@ -37,7 +37,7 @@ export function SiteMarkup() {
 
   <main id="content">
     <section className="hero" id="top">
-      <p className="side-index">Buyers open</p>
+      <p className="side-index">Buyer Inquiries Welcome</p>
       <div className="wrap">
         <div className="hero-top">
           <div>
@@ -105,8 +105,8 @@ export function SiteMarkup() {
             <img src="/assets/photos/pa66-ready.jpg" alt="출고를 기다리는 PA66 톤백" width="1600" height="650" />
             <figcaption>출고 대기 물량</figcaption>
           </figure>
-          <figure>
-            <img src="/assets/photos/pa66-load.jpg" alt="컨테이너에 실린 PA66 톤백" width="840" height="917" />
+          <figure className="focus-load">
+            <img src="/assets/photos/pa66-load.jpg" alt="컨테이너에 실린 PA66 톤백" width="840" height="447" />
             <figcaption>컨테이너 적재</figcaption>
           </figure>
         </div>
@@ -357,7 +357,7 @@ export function SiteMarkup() {
           <img src="/assets/photos/freight.jpg" alt="부품 박스가 정리된 창고 통로" width="1800" height="1200" />
           <div className="slide-cap">
             <span>/ 03</span>
-            <h3>서류 · 조건</h3>
+            <h3>무역 서류 및 거래 조건 검토</h3>
             <p>상업송장, 포장명세서, 운송서류, 원산지증명서 등 필요한 서류를 확인하고, 신용장 및 거래 조건을 검토합니다.</p>
           </div>
         </article>
@@ -366,7 +366,7 @@ export function SiteMarkup() {
           <div className="slide-cap">
             <span>/ 04</span>
             <h3>운송 조율</h3>
-            <p>해상, 항공, 내륙, 복합운송 가운데 납기와 화물에 맞는 방법을 예약하고 연결합니다.</p>
+            <p>화물의 특성과 납기에 맞춰 해상·항공·내륙 운송 또는 복합운송을 선정하고, 운송 예약과 일정을 조율합니다.</p>
           </div>
         </article>
         <article className="slide">
@@ -374,7 +374,7 @@ export function SiteMarkup() {
           <div className="slide-cap">
             <span>/ 05</span>
             <h3>선적 관리</h3>
-            <p>출고 전 상태, 선적 일정, 도착 예정 정보를 모아 진행 상황을 한곳에서 공유합니다.</p>
+            <p>출고 전 화물 상태, 선적 일정 및 도착 예정일을 확인하고, 진행 상황을 공유합니다.</p>
           </div>
         </article>
       </div>
@@ -400,7 +400,7 @@ export function SiteMarkup() {
 
     <section className="movement" id="movement">
       <div className="wrap">
-        <p className="eyebrow"><i></i> Movement</p>
+        <p className="eyebrow"><i></i> Transport & Logistics</p>
         <h2 className="block-title">해상·항공·내륙 운송,<br />화물과 일정에 맞춰 연결합니다.</h2>
         <p className="lead">화물의 특성, 목적지와 납기를 고려하여 운송 방안을 제안합니다. 계약에서 정한 업무 범위와 거래 조건에 따라 출고, 선적 및 목적지 운송을 지원합니다.</p>
         <div className="mosaic">
@@ -478,7 +478,7 @@ export function SiteMarkup() {
           </ul>
         </div>
         <div>
-          <svg className="route-map" viewBox="0 0 720 500" role="img" aria-label="인도에서 태국과 한국으로 이어지는 노선. 흰 점은 인도 창고입니다.">
+          <svg className="route-map" viewBox="0 0 720 500" role="img" aria-label="인도에서 태국과 한국으로 이어지는 노선. 흰색 점은 인도의 창고·사무실 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.">
             <g fill="none" stroke="rgba(243,240,232,0.45)" strokeWidth="1.25" strokeLinecap="round">
               <path d="M210 292C290 210 350 188 430 206" />
               <path d="M210 292C340 180 470 110 590 132" />
@@ -489,7 +489,7 @@ export function SiteMarkup() {
               <g><circle cx="590" cy="132" r="10" fill="none" strokeOpacity="0.45" /><circle cx="590" cy="132" r="3.5" stroke="none" /><text x="590" y="114" textAnchor="middle" stroke="none">한국</text></g>
             </g>
           </svg>
-          <p className="map-note">흰 점은 인도 창고 · 사무실. 태국과 한국은 도착지</p>
+          <p className="map-note">흰색 점은 인도의 창고·사무실 위치를, 태국과 한국은 주요 수출 목적지를 나타냅니다.</p>
         </div>
       </div>
     </section>
@@ -541,13 +541,13 @@ export function SiteMarkup() {
               <label className="full">문의 유형 <i>*</i>
                 <select name="kind" required>
                   <option value="">문의 유형을 선택해 주세요.</option>
-                  <option>PA66 코팅 매입</option>
-                  <option>PA66 언코팅 매입</option>
-                  <option>스크랩 매입 · 한국향</option>
+                  <option>코팅 PA66 에어백 원단 구매 문의</option>
+                  <option>비코팅 PA66 에어백 원단 구매 문의</option>
+                  <option>스크랩 구매 문의 · 한국 수출</option>
                   <option>석영 매입</option>
                   <option>자단(레드 샌달우드) 매입</option>
                   <option>인도 수입 대행</option>
-                  <option>인도·한국 수출 지원</option>
+                  <option>인도 → 한국 수출 대행</option>
                   <option>기타 수출 대행</option>
                   <option>기타 수입 대행</option>
                 </select>
@@ -569,13 +569,13 @@ export function SiteMarkup() {
               </label>
             </div>
             <div className="form-actions">
-              <button className="btn" type="submit">문의서 생성</button>
-              <p className="form-note">필수 항목(*)을 입력하시면 문의서를 생성할 수 있습니다.</p>
+              <button className="btn" type="submit">문의 내용 작성하기</button>
+              <p className="form-note">입력하신 내용으로 문의서가 작성됩니다. 작성된 문의서는 자동 전송되지 않으므로, 복사한 후 담당자에게 전달해 주세요.</p>
             </div>
           </form>
           <div className="form-success" role="status">
-            <h3>요청서를 정리했습니다.</h3>
-            <p>아래 내용을 복사해 담당자에게 보내 주세요.</p>
+            <h3>문의서가 작성되었습니다.</h3>
+            <p>아래 내용을 복사하여 담당자 이메일 또는 WhatsApp으로 보내 주세요.</p>
             <pre id="inquiry-preview"></pre>
             <div className="form-actions">
               <button className="btn" type="button" id="copy-inquiry">내용 복사</button>
@@ -591,7 +591,10 @@ export function SiteMarkup() {
     <div className="wrap">
       <div className="footer-grid">
         <div className="foot-brand">
-          <img src="/assets/logo-wordmark.png" alt="Neocle International" width="972" height="288" />
+          <a className="brand" href="#top" aria-label="Neocle International">
+            <img src="/assets/logo-neocle.png" alt="" width="808" height="210" />
+            <span className="brand-sub" aria-hidden="true">International</span>
+          </a>
           <p>PA66 코팅·비코팅 원단을 태국과 한국에, 스크랩을 한국에 수출합니다. 석영과 자단의 구매 상담 및 수출입 대행도 지원합니다. 자단의 공급·수출 가능 여부는 관련 허가와 서류 확인 후 안내합니다.</p>
         </div>
         <div>
@@ -625,10 +628,10 @@ export function SiteMarkup() {
           </ul>
         </div>
         <div className="family">
-          <h3>Family site</h3>
+          <h3>Family Sites</h3>
           <ul>
             <li><a href="https://www.mvsystem.in" target="_blank" rel="noopener noreferrer">업무 통합 시스템 MVS</a></li>
-            <li><a href="https://www.heresnow.in" target="_blank" rel="noopener noreferrer">GPS 기반 출퇴근 근태 기록 시스템 HeresNow</a></li>
+            <li><a href="https://www.heresnow.in" target="_blank" rel="noopener noreferrer">GPS 기반 출퇴근 기록 시스템 HeresNow</a></li>
             <li><a href="https://www.neocle.in" target="_blank" rel="noopener noreferrer">수출입 전문기업 Neocle</a></li>
             <li><a href="https://www.msventures.in" target="_blank" rel="noopener noreferrer">비즈니스 컨설팅 MSV</a></li>
           </ul>
@@ -644,7 +647,15 @@ export function SiteMarkup() {
       </div>
     </div>
   </footer>
-  
+      <dialog className="lightbox" aria-label="사진 보기">
+        <button className="lightbox-close" type="button" data-lightbox="close" aria-label="닫기">×</button>
+        <button className="lightbox-nav lightbox-prev" type="button" data-lightbox="prev" aria-label="이전 사진">‹</button>
+        <figure>
+          <img alt="" />
+          <figcaption></figcaption>
+        </figure>
+        <button className="lightbox-nav lightbox-next" type="button" data-lightbox="next" aria-label="다음 사진">›</button>
+      </dialog>
 
     </>
   );
