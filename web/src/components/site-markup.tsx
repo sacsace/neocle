@@ -336,7 +336,7 @@ export function SiteMarkup() {
           </div>
         </div>
       </div>
-      <div className="rail" tabIndex="0" aria-label="서비스 목록">
+      <div className="rail" tabIndex={0} aria-label="서비스 목록">
         <article className="slide">
           <img src="/assets/photos/ship.jpg" alt="항만 크레인 옆에 정박한 컨테이너선" width="1800" height="1200" />
           <div className="slide-cap">
